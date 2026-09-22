@@ -1,0 +1,9 @@
+﻿grupo_avaliacao;situacao_entrega;total_clientes;clientes_que_recompraram;recompras_antes_entrega;clientes_que_nao_recompraram;taxa_recompra
+Boa;Atrasado;1393;39;15;1354;0,02799712849964106
+Boa;No prazo;62840;1881;460;60959;0,02993316359007002
+Neutra;Atrasado;616;16;8;600;0,025974025974025976
+Neutra;No prazo;6356;165;46;6191;0,025959723096286972
+Ruim;Atrasado;3688;71;32;3617;0,019251626898047724
+Ruim;No prazo;7440;206;80;7234;0,02768817204301075
+Sem avaliação;Atrasado;20;17;17;3;0,85
+Sem avaliação;No prazo;149;139;135;10;0,9328859060402684

@@ -1,0 +1,2 @@
+﻿grupo_1;grupo_2;total_clientes_boa;recompras_boa;total_clientes_ruim;recompras_ruim;taxa_recompra_boa;taxa_recompra_ruim;diferenca_pp;ic_inferior_pp;ic_superior_pp;nivel_confianca;estatistica_z;p_valor;alpha;rejeita_hipotese_nula;teste;metodo_intervalo;recorte
+Boa;Ruim;64233;1920;11128;277;0,029891177432161038;0,0248921639108555;0,4999013521305537;0,16760514406070948;0,8046819178479742;0,95;2,8938868767758064;0,003805052197396241;0,05;True;Z bilateral de duas proporções;Newcombe;"Geral: clientes elegíveis com avaliações boas ou ruins; recompra após a compra"

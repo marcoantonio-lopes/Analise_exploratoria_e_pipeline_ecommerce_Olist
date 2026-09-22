@@ -1,0 +1,5 @@
+﻿grupo_avaliacao;total_clientes;clientes_com_prazo;clientes_atrasados;clientes_sem_prazo;pct_atrasados
+Boa;64233;64233;1393;0;0,021686671959896004
+Neutra;6972;6972;616;0;0,08835341365461848
+Ruim;11128;11128;3688;0;0,33141624730409774
+Sem avaliação;169;169;20;0;0,11834319526627218

@@ -1,0 +1,22 @@
+
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Dados locais
+data/raw/
+data/processed/
+data/processed_validacao/
+
+# Materiais históricos
+backups/
+xnotebook/
+
+# Configurações privadas
+.env
+.env.*
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
