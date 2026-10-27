@@ -1,0 +1,92 @@
+[
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\processed\\base_analitica_pedidos.parquet",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\processed\\base_analitica_pedidos.parquet",
+    "sha256": "08C1963B854203B48589BD70546DF46278BA40B5E9C83BBCD78A31E97A73C98D"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\notebooks\\06_taxa_recompra.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\06_taxa_recompra.ipynb",
+    "sha256": "37343B1408C153A5E3C87E89B4F741AA825A59D212E30A67FF8F1ED073A7D6E6"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_152728_382075\\notebooks\\08_consistencia_resultados.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\organizacao_20260909_153617\\notebooks\\08_consistencia_resultados.ipynb",
+    "sha256": "3FB8822110ED84D2A820CEA8EB6E8FD34161EDBBAE7DF28C070B274A90B4A712"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\processed\\itens_pedidos.parquet",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\processed\\itens_pedidos.parquet",
+    "sha256": "4E6C0D34A79939A6155D80C069B0F5BB61E957840733BAB9207752F18332E868"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_152728_382075\\notebooks\\09_testes_estatisticos.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\organizacao_20260909_153617\\notebooks\\09_testes_estatisticos.ipynb",
+    "sha256": "6C6A75D24D44E310A3EE0EC4D9365CAB0FEA1E114687F20FA920353C952B5781"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_152728_382075\\processed\\itens_pedidos.parquet",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_151642_815941\\processed\\itens_pedidos.parquet",
+    "sha256": "71FFDCBFE57437BD348A56501792CE78B0D99091E555940C5DBA7B8DE4485FEA"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\notebooks\\02_atrasos.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\02_atrasos.ipynb",
+    "sha256": "8C6B9786BF19992F08F9A689ED96C4BE476051DC947AC884E208394F6BDE533A"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\notebooks\\05_vendedores.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\05_vendedores.ipynb",
+    "sha256": "AC1CB96C1F99F6912BA9A3A20BB794CBA56060D7925F0FFF1B7FA36B6AE602B3"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\notebooks\\04_regioes.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\04_regioes.ipynb",
+    "sha256": "B5FB21168AC2140E06DF7400E2CAE2C23AA32B0FDA260E18AA2ECA052A757DDE"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_152728_382075\\processed\\base_analitica_pedidos.parquet",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_151642_815941\\processed\\base_analitica_pedidos.parquet",
+    "sha256": "BF69B28C802F0474B508D5FE9DC7892C5DE2DFCF0D7EE68947334D59E2D9F911"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_152728_382075\\notebooks\\07_validacao_pipeline.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\organizacao_20260909_153617\\notebooks\\07_validacao_pipeline.ipynb",
+    "sha256": "D0141F400831C1807DCD1BE014E9BFF7EFB5A904852F2F98E07487FB2676B8B3"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\organizacao_20260909_153617\\notebooks\\teste.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\teste.ipynb",
+    "sha256": "E93F270421C1F1DE216C1C0CBF18D5A29A71D99FA710C40075CBBBED5179D8EC"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\notebooks\\teste.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\teste.ipynb",
+    "sha256": "E93F270421C1F1DE216C1C0CBF18D5A29A71D99FA710C40075CBBBED5179D8EC"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_151642_815941\\notebooks\\teste.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\teste.ipynb",
+    "sha256": "E93F270421C1F1DE216C1C0CBF18D5A29A71D99FA710C40075CBBBED5179D8EC"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_152728_382075\\notebooks\\teste.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\teste.ipynb",
+    "sha256": "E93F270421C1F1DE216C1C0CBF18D5A29A71D99FA710C40075CBBBED5179D8EC"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\backups\\pipeline_20260909_150911_132607\\notebooks\\03_produtos.ipynb",
+    "retained": "C:\\Dataset\\ecommerce\\backups\\20260909_validacao\\notebooks\\03_produtos.ipynb",
+    "sha256": "EA3C46A91CB6BF31400F6237D2A6127D86474E2190E58048947F4CB0B2DE63C1"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\data\\processed_validacao\\base_analitica_pedidos.parquet",
+    "retained": "C:\\Dataset\\ecommerce\\data\\processed\\base_analitica_pedidos.parquet",
+    "sha256": "E8273F9BBA9607A70F5D0BEC14BC88B492D4DD0393CD3D59F64A97957FF60FC1"
+  },
+  {
+    "removed": "C:\\Dataset\\ecommerce\\data\\processed_validacao\\itens_pedidos.parquet",
+    "retained": "C:\\Dataset\\ecommerce\\data\\processed\\itens_pedidos.parquet",
+    "sha256": "A3070F9FF0A1E82AAF8A2549C3FB3691BB255953F2612C422464F3A588278B03"
+  }
+]

@@ -90,6 +90,17 @@ def main():
         check_exact=True
     )
 
+    # O notebook 01 é uma referência manual e não roda neste pipeline.
+    # Atualiza também as fontes detalhadas CSV usadas nas consultas do Power BI.
+    pasta_csv = raiz_projeto / 'outputs' / 'tabelas' / 'csv'
+    pasta_csv.mkdir(parents=True, exist_ok=True)
+    for nome, tabela in (
+        ('base_analitica_pedidos', base_analitica),
+        ('itens_pedidos', itens),
+    ):
+        # Preserva o formato do notebook 01: vírgula e ponto decimal.
+        tabela.to_csv(pasta_csv / f'{nome}.csv', index=False, encoding='utf-8-sig')
+
     print('Bases salvas e exportação conferida.')
     print('Base analítica:', caminho_base)
     print('Base de itens:', caminho_itens)

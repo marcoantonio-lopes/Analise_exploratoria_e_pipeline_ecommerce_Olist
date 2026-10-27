@@ -8,6 +8,11 @@ As interpretações e limitações estão em [docs/conclusoes.md](docs/conclusoe
 
 ## Estrutura
 
+O Python continua responsável por todos os cálculos. O Power Automate Desktop
+executa este pipeline e depois atualiza e salva o relatório no Power BI Desktop.
+Ele não substitui os scripts ou a `.venv`. Consulte [power_bi/README.md](power_bi/README.md)
+para a operação diária e [docs/README.md](docs/README.md) para o inventário e a limpeza.
+
 ```text
 src/                         # Leitura, preparação e execução dos notebooks
 notebooks/                   # Notebooks originais de preparação e análise
@@ -17,12 +22,17 @@ outputs/notebooks/           # Cópias executadas das análises
 outputs/graficos/            # Imagens exportadas pelos notebooks
 outputs/tabelas/parquet/     # Resultados para reutilização nas análises
 outputs/tabelas/csv/         # Os mesmos resultados para importar no Power BI
+outputs/powerbi/             # Relatório local salvo pelo Power BI; PDF manual
+power_bi/                   # Orientações e auditoria histórica do relatório
 docs/conclusoes.md           # Conclusões e limitações
 executar_pipeline.py         # Comando de execução do fluxo completo
 requirements.txt             # Versões das dependências diretas
 ```
 
-`backups/` e `xnotebook/` são materiais históricos e não entram no pipeline. A pasta `data/processed_validacao/`, se existir, é resultado da conferência inicial e não é mais alimentada pelo fluxo.
+`backups/` e `xnotebook/` contêm materiais históricos únicos e não entram no pipeline.
+Duplicatas idênticas foram removidas; o registro está em
+[docs/limpeza_duplicatas.json](docs/limpeza_duplicatas.json).
+As cópias redundantes de `data/processed_validacao/` também foram removidas.
 
 ## Dados necessários
 
@@ -64,6 +74,8 @@ O comando:
 3. Resume os itens por pedido e constrói a base analítica.
 4. Executa as verificações de chaves, contagens e regras presentes nas funções.
 5. Salva os dois Parquets em `data/processed/` e confere a leitura contra os resultados em memória.
+   Exporta também `base_analitica_pedidos.csv` e `itens_pedidos.csv` em
+   `outputs/tabelas/csv/`, sem depender da execução manual do notebook 01.
 6. Executa os notebooks `02_atrasos` a `10_recompra_atraso_avaliacao`, em sequência e em kernels novos.
 7. Em cada análise, monta os gráficos e depois executa uma única seção final de exportações: tabelas em Parquet/CSV e figuras em PNG. Os gráficos são capturados em memória antes de fechar as figuras e gravados no final.
 8. Salva cópias executadas, com tabelas e gráficos visíveis, em `outputs/notebooks/`.
@@ -71,6 +83,11 @@ O comando:
 A mensagem `Pipeline concluído: bases, notebooks, tabelas e gráficos atualizados.` indica que todas as etapas terminaram. Arquivos de saída com os mesmos nomes são substituídos. Os notebooks originais não são sobrescritos pelo executor. Se uma etapa falhar, o processo interrompe e mostra o erro; saídas das etapas anteriores permanecem gravadas (não há reversão automática).
 
 ### Tabelas de vendedores para Power BI
+
+**Atenção aos formatos:** os dois CSVs detalhados (`base_analitica_pedidos.csv`
+e `itens_pedidos.csv`) preservam separador vírgula e ponto decimal, como no notebook 01.
+Os resumos com prefixos `02_` a `10_` usam ponto e vírgula e vírgula decimal.
+Ambos usam UTF-8 com BOM. Não altere o delimitador das consultas existentes em lote.
 
 O notebook `05_vendedores.ipynb`, já incluído no pipeline, exporta automaticamente em `outputs/tabelas/parquet/`, com cópias CSV em `outputs/tabelas/csv/`:
 
@@ -97,7 +114,9 @@ As seções finais de exportação geram os arquivos abaixo em `outputs/tabelas/
 | `09_regioes_estados_atraso_avaliacao` | `09_estados_atraso_avaliacao`, `09_regioes_atraso_avaliacao` |
 | `10_recompra_atraso_avaliacao` | `10_atraso_por_avaliacao`, `10_recompra_por_atraso`, `10_recompra_avaliacao_atraso` |
 
-Todos os outputs de tabelas e gráficos usam o prefixo de dois dígitos do notebook de origem (`02_` a `10_`). As bases internas em `data/processed/` mantêm os nomes atuais. Se já houver consultas no Power BI, atualize seus caminhos para os novos nomes.
+Os resumos e gráficos usam o prefixo de dois dígitos do notebook de origem (`02_` a `10_`).
+As duas bases detalhadas não têm prefixo. Os caminhos existentes foram preservados
+para manter as consultas do Power BI funcionando.
 
 Todos os nomes acima recebem a extensão `.parquet` na subpasta `parquet/` e `.csv` na subpasta `csv/`. As pastas são criadas na execução. Os dois formatos são exportados a partir do mesmo DataFrame, sem índice. Os CSVs usam separador `;`, vírgula decimal e codificação UTF-8 com BOM (`utf-8-sig`). As novas exportações conferem a leitura dos Parquets contra os resultados em memória. A coluna `faixa_atraso`, originalmente no índice, é preservada como coluna no arquivo. As taxas permanecem numéricas, sem a formatação visual do notebook.
 
@@ -114,7 +133,10 @@ Essas tabelas são resumos dos recortes já definidos nas análises: filtros no 
 - **09:** quatro PNGs com prefixo `09_`, mostrando avaliações ruins e composição das entregas por estado e região.
 - **10:** três PNGs com prefixo `10_`, mostrando atrasos por avaliação, recompra por atraso e recompra por avaliação e atraso.
 
-Os gráficos anteriores continuam em `outputs/graficos/`. Nos notebooks 02–10 há somente três blocos Markdown breves: pergunta/objetivo, gráficos e exportações. O 01 não monta gráficos; o notebook de teste apenas valida as bases. Os originais ficam sem resultados antigos; execute-os manualmente ou consulte as cópias de `outputs/notebooks/` para visualizar resultados atualizados.
+Os gráficos ficam em `outputs/graficos/`. O notebook 01 documenta a preparação;
+o notebook de teste valida as bases. Consulte as cópias em `outputs/notebooks/`
+para ver os resultados da última execução completa, sem depender de saídas
+eventualmente salvas nos notebooks de origem.
 
 ## Executar uma análise com os Parquets existentes
 
